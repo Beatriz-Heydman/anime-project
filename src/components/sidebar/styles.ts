@@ -8,7 +8,7 @@ export const StyledSidebar = styled.div<SidebarProps>`
   background-color: #1f2531;
   height: 100%;
   min-height: 100vh;
-  width: ${({ isOpenSidebar }) => (isOpenSidebar ? "227px" : "70px")};
+  width: ${({ isOpenSidebar }) => (isOpenSidebar ? "230px" : "70px")};
   transition: all ease 0.2s;
 
   .container_menu_hamburger {
@@ -20,6 +20,13 @@ export const StyledSidebar = styled.div<SidebarProps>`
     box-shadow: inset 0px 0px 12px 4px rgba(255, 255, 255, 0.14);
     font-family: "Megrim";
     font-size: 24px;
+  }
+
+  .text_nav {
+    opacity: ${({ isOpenSidebar }) => (isOpenSidebar ? "1" : "0")};
+    margin-top: ${({ isOpenSidebar }) => (isOpenSidebar ? "0" : "1rem")};
+    pointer-events: ${({ isOpenSidebar }) => (isOpenSidebar ? "auto" : "none")};
+    transition: all ease 0.2s;
   }
 
   .menu_hamburger {

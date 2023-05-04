@@ -1,5 +1,8 @@
 //Libs
 import { useState } from "react";
+import { HiHome } from "react-icons/hi";
+import { FaPlay } from "react-icons/fa";
+import { BsCameraReelsFill, BsFillRocketTakeoffFill } from "react-icons/bs";
 
 //Styles
 import { StyledSidebar } from "./styles";
@@ -30,8 +33,11 @@ export function Sidebar() {
         </button>
         {isOpenSidebar && <span>AnimetriX</span>}
       </div>
-      <Flex>
-        <NavItem />
+      <Flex direction="column" alignItems="flex-start">
+        <NavItem icon={<HiHome />} text="Início" isSelected />
+        <NavItem icon={<FaPlay />} text="Animes Populares" />
+        <NavItem icon={<BsCameraReelsFill />} text="Filmes" />
+        <NavItem icon={<BsFillRocketTakeoffFill />} text="Lançamentos" />
       </Flex>
     </StyledSidebar>
   );

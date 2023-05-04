@@ -1,9 +1,17 @@
+//Styles
 import { StyledNavItem } from "./styles";
 
-export function NavItem() {
+//Types
+import { NavItemProps } from "./types";
+
+export function NavItem({ icon, text, isSelected }: NavItemProps) {
   return (
-    <StyledNavItem>
-      <a>hello</a>
+    <StyledNavItem isSelected={isSelected}>
+      <div className="icon">{icon}</div>
+
+      <a href="" className="text_nav">
+        {text}
+      </a>
     </StyledNavItem>
   );
 }
