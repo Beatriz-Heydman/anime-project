@@ -10,6 +10,7 @@ import { StyledSidebar } from "./styles";
 //Components
 import { Flex } from "../flex";
 import { NavItem } from "./nav-item";
+import { Typography } from "../typography";
 
 export function Sidebar() {
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
@@ -31,7 +32,11 @@ export function Sidebar() {
           <span className="bar middle_bar" />
           <span className="bar bottom_bar" />
         </button>
-        {isOpenSidebar && <span>AnimetriX</span>}
+        {isOpenSidebar && (
+          <Typography fontFamily="Megrim" fontSize="1.5rem">
+            AnimetriX
+          </Typography>
+        )}
       </div>
       <Flex direction="column" alignItems="flex-start">
         <NavItem icon={<HiHome />} text="Início" isSelected />
