@@ -37,6 +37,8 @@ export const StyledNavItem = styled.nav<NavItemPropsStyled>`
   }
 
   .icon {
+    display: flex;
+    align-items: center;
     font-size: 20px;
   }
 `;
