@@ -1,5 +1,7 @@
 //Libs
 import styled from "styled-components";
+
+//Types
 import { StyledCardProps } from "./types";
 
 export const StyledCard = styled.div<StyledCardProps>`
