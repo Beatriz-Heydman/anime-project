@@ -1,17 +1,26 @@
 //Styles
+import { useNavigate, useLocation } from "react-router-dom";
 import { StyledNavItem } from "./styles";
 
 //Types
 import { NavItemProps } from "./types";
 
-export function NavItem({ icon, text, isSelected }: NavItemProps) {
+export function NavItem({ icon, text, href }: NavItemProps) {
+  const navigation = useNavigate();
+
+  const { pathname } = useLocation();
+
   return (
-    <StyledNavItem isSelected={isSelected}>
+    <StyledNavItem
+      className="styled_nav_item"
+      isSelected={pathname === href}
+      onClick={() => {
+        navigation(href);
+      }}
+    >
       <div className="icon">{icon}</div>
 
-      <a href="" className="text_nav">
-        {text}
-      </a>
+      <span className="text_nav">{text}</span>
     </StyledNavItem>
   );
 }

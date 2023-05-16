@@ -23,10 +23,10 @@ export const StyledSidebar = styled.div<SidebarProps>`
   }
 
   .text_nav {
-    opacity: ${({ isOpenSidebar }) => (isOpenSidebar ? "1" : "0")};
+    display: ${({ isOpenSidebar }) => (isOpenSidebar ? "flex" : "none")};
+  }
+  .styled_nav_item {
     margin-top: ${({ isOpenSidebar }) => (isOpenSidebar ? "0" : "1rem")};
-    pointer-events: ${({ isOpenSidebar }) => (isOpenSidebar ? "auto" : "none")};
-    transition: all ease 0.2s;
   }
 
   .menu_hamburger {

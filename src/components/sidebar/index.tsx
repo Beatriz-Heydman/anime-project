@@ -39,10 +39,18 @@ export function Sidebar() {
         )}
       </div>
       <Flex direction="column" alignItems="flex-start">
-        <NavItem icon={<HiHome />} text="Início" isSelected />
-        <NavItem icon={<FaPlay />} text="Animes Populares" />
-        <NavItem icon={<BsCameraReelsFill />} text="Filmes" />
-        <NavItem icon={<BsFillRocketTakeoffFill />} text="Lançamentos" />
+        <NavItem href="/" icon={<HiHome />} text="Início" />
+        <NavItem
+          href="/general-animes"
+          icon={<FaPlay />}
+          text="Animes Populares"
+        />
+        <NavItem href="/movies" icon={<BsCameraReelsFill />} text="Filmes" />
+        <NavItem
+          href="/releases"
+          icon={<BsFillRocketTakeoffFill />}
+          text="Lançamentos"
+        />
       </Flex>
     </StyledSidebar>
   );
