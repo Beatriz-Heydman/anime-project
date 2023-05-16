@@ -1,5 +1,7 @@
-//Styles
+//Libs
 import { useNavigate, useLocation } from "react-router-dom";
+
+//Styles
 import { StyledNavItem } from "./styles";
 
 //Types

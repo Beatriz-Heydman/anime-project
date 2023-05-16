@@ -1,5 +1,7 @@
-//Components
+//Libs
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+//Components
 import { Flex } from "./components/flex";
 import { Sidebar } from "./components/sidebar";
 import { GeneralAnimesPage } from "./pages/general-animes";
