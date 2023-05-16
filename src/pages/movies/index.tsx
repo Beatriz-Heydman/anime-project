@@ -1,11 +1,11 @@
 //Components
-import { Typography } from "../../components/typography";
+import { SessionTitle } from "../../components/session-title";
 import { Template } from "../../template";
 
 export function MoviesPage() {
   return (
     <Template>
-      <Typography>Página de filmes</Typography>
+      <SessionTitle title="Filmes" />
     </Template>
   );
 }
