@@ -9,6 +9,12 @@ export const StyledNavItem = styled.nav<NavItemPropsStyled>`
   gap: 1.6rem;
   padding: 1.5rem;
   position: relative;
+  cursor: pointer;
+  transition: all ease 0.2s;
+
+  &:hover {
+    filter: brightness(1.5);
+  }
 
   &:before {
     content: "";
@@ -40,5 +46,6 @@ export const StyledNavItem = styled.nav<NavItemPropsStyled>`
     display: flex;
     align-items: center;
     font-size: 20px;
+    transition: all ease 0.2s;
   }
 `;

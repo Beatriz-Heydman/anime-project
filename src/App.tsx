@@ -1,36 +1,35 @@
+//Libs
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 //Components
-import { Button } from "./components/button";
-import { CardAnime } from "./components/card-anime";
 import { Flex } from "./components/flex";
-import { Input } from "./components/input";
 import { Sidebar } from "./components/sidebar";
+import { GeneralAnimesPage } from "./pages/general-animes";
+import { HomePage } from "./pages/home";
+import { MoviesPage } from "./pages/movies";
+import { ReleaseAnimesPage } from "./pages/release-animes";
 
 function App() {
   return (
-    <Flex
-      justifyContent="flex-start"
-      alignItems="flex-start"
-      style={{
-        minHeight: "100vh",
-        minWidth: "100vw",
-        backgroundColor: "#282c38",
-      }}
-    >
-      <Sidebar />
-      <Flex direction="column" style={{ width: "100%", padding: "2rem" }}>
-        <Flex gap="1rem" style={{ width: "100%", padding: "2rem" }}>
-          <Input />
-          <Button />
-        </Flex>
-        <Flex gap="1.5rem" flexWrap="wrap">
-          <CardAnime
-            animeImg="https://th.bing.com/th/id/OIP.lCW9jmu3fpwCBZsO-1xF6QHaLu?pid=ImgDet&rs=1"
-            animeName="Naruto"
-            subtitle="Episodeo 2"
-          />
-        </Flex>
+    <BrowserRouter>
+      <Flex
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        style={{
+          minHeight: "100vh",
+          minWidth: "100vw",
+          backgroundColor: "#282c38",
+        }}
+      >
+        <Sidebar />
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<GeneralAnimesPage />} path="/general-animes" />
+          <Route element={<MoviesPage />} path="/movies" />
+          <Route element={<ReleaseAnimesPage />} path="/releases" />
+        </Routes>
       </Flex>
-    </Flex>
+    </BrowserRouter>
   );
 }
 

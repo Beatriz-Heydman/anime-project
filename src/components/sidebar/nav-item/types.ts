@@ -2,9 +2,9 @@
 import { ReactNode } from "react";
 
 export type NavItemProps = {
-  isSelected?: boolean;
   text: string;
   icon: ReactNode;
+  href: string;
 };
 
 export type NavItemPropsStyled = {
