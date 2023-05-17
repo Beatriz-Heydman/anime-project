@@ -1,6 +1,19 @@
 //Components
-import { Template } from "../../template";
+import { Typography } from "../../components/typography";
+
+//Styles
+import { StyledHomePage } from "./styles";
 
 export function HomePage() {
-  return <Template>animetix</Template>;
+  return (
+    <StyledHomePage>
+      <Typography
+        className="title_home_page"
+        fontFamily="Monofett"
+        fontSize="13rem"
+      >
+        animetrix
+      </Typography>
+    </StyledHomePage>
+  );
 }
