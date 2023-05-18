@@ -11,6 +11,7 @@ export function HomePage() {
         className="title_home_page"
         fontFamily="Monofett"
         fontSize="13rem"
+        color="#e2cbffac"
       >
         animetrix
       </Typography>

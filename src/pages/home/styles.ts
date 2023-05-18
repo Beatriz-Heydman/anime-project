@@ -14,57 +14,40 @@ export const StyledHomePage = styled.div`
   .title_home_page {
     text-align: center;
     letter-spacing: 1.5rem;
-    color: #e2cbffac;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-  }
 
-  @media (max-width: 1300px) {
-    .title_home_page {
+    @media (max-width: 1300px) {
       font-size: 10rem;
     }
-  }
 
-  @media (max-width: 1150px) {
-    .title_home_page {
+    @media (max-width: 1150px) {
       font-size: 9rem;
     }
-  }
 
-  @media (max-width: 1090px) {
-    .title_home_page {
+    @media (max-width: 1090px) {
       font-size: 8rem;
     }
-  }
 
-  @media (max-width: 950px) {
-    .title_home_page {
+    @media (max-width: 950px) {
       font-size: 7rem;
     }
-  }
 
-  @media (max-width: 820px) {
-    .title_home_page {
+    @media (max-width: 820px) {
       font-size: 6rem;
     }
-  }
 
-  @media (max-width: 750px) {
-    .title_home_page {
+    @media (max-width: 750px) {
       font-size: 5rem;
     }
-  }
 
-  @media (max-width: 630px) {
-    .title_home_page {
+    @media (max-width: 630px) {
       font-size: 4rem;
     }
-  }
 
-  @media (max-width: 560px) {
-    .title_home_page {
+    @media (max-width: 560px) {
       letter-spacing: 0;
       font-size: 4rem;
       writing-mode: vertical-lr;
