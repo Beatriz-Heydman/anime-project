@@ -33,8 +33,12 @@ export function Sidebar() {
           <span className="bar bottom_bar" />
         </button>
         {isOpenSidebar && (
-          <Typography fontFamily="Megrim" fontSize="1.5rem">
-            AnimetriX
+          <Typography
+            fontFamily="Monofett"
+            fontSize="1.5rem"
+            style={{ letterSpacing: "0.2rem", color: "#e2cbffac" }}
+          >
+            animetrix
           </Typography>
         )}
       </div>
