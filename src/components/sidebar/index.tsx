@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { HiHome } from "react-icons/hi";
 import { FaPlay } from "react-icons/fa";
-import { BsCameraReelsFill, BsFillRocketTakeoffFill } from "react-icons/bs";
+import { BsFillRocketTakeoffFill } from "react-icons/bs";
+import { MdMenuBook } from "react-icons/md";
 
 //Styles
 import { StyledSidebar } from "./styles";
@@ -49,7 +50,7 @@ export function Sidebar() {
           icon={<FaPlay />}
           text="Animes Populares"
         />
-        <NavItem href="/movies" icon={<BsCameraReelsFill />} text="Filmes" />
+        <NavItem href="/mangas" icon={<MdMenuBook />} text="Mangás" />
         <NavItem
           href="/releases"
           icon={<BsFillRocketTakeoffFill />}

@@ -6,7 +6,7 @@ import { Flex } from "./components/flex";
 import { Sidebar } from "./components/sidebar";
 import { GeneralAnimesPage } from "./pages/general-animes";
 import { HomePage } from "./pages/home";
-import { MoviesPage } from "./pages/movies";
+import { MangasPage } from "./pages/mangas";
 import { ReleaseAnimesPage } from "./pages/release-animes";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         alignItems="flex-start"
         style={{
           minHeight: "100vh",
-          minWidth: "100vw",
+          minWidth: "100%",
           backgroundColor: "#282c38",
         }}
       >
@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route element={<HomePage />} path="/" />
           <Route element={<GeneralAnimesPage />} path="/general-animes" />
-          <Route element={<MoviesPage />} path="/movies" />
+          <Route element={<MangasPage />} path="/mangas" />
           <Route element={<ReleaseAnimesPage />} path="/releases" />
         </Routes>
       </Flex>

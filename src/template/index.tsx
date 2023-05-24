@@ -8,10 +8,14 @@ import { TemplateProps } from "./types";
 
 export function Template({ children }: TemplateProps) {
   return (
-    <Flex direction="column" style={{ width: "100%", padding: "2rem" }}>
-      <Flex gap="1rem" style={{ width: "100%", padding: "2rem" }}>
+    <Flex
+      direction="column"
+      gap="2rem"
+      style={{ width: "100%", padding: "2rem" }}
+    >
+      <Flex gap="1rem" style={{ width: "100%", padding: "1rem" }}>
         <Input />
-        <Button />
+        <Button onClick={() => {}}>Buscar</Button>
       </Flex>
       {children}
     </Flex>

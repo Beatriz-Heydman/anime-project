@@ -1,10 +1,18 @@
 //Styles
 import { StyledButton } from "./styles";
 
-export function Button() {
+//Types
+import { ButtonProps } from "./types";
+
+export function Button({
+  children,
+  background,
+  padding,
+  onClick,
+}: ButtonProps) {
   return (
-    <StyledButton>
-      <span>Buscar</span>
+    <StyledButton background={background} padding={padding} onClick={onClick}>
+      {children}
     </StyledButton>
   );
 }

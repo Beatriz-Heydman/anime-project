@@ -13,9 +13,15 @@ export function CardAnime({
   animeName,
   subtitle,
   animeImg,
+  animeUrl,
 }: CardAnimeProps) {
   return (
-    <StyledCard dubOrSubText={dubOrSubText} animeImg={animeImg}>
+    <StyledCard
+      dubOrSubText={dubOrSubText}
+      animeImg={animeImg}
+      href={animeUrl}
+      target="_blank"
+    >
       {dubOrSubText && (
         <Typography
           fontSize="0.7rem"
@@ -32,7 +38,19 @@ export function CardAnime({
         gap="0.5rem"
         style={{ width: "100%", padding: "0 1rem" }}
       >
-        <Typography fontSize="0.90rem" fontFamily="Inter" fontWeight="400">
+        <Typography
+          className="anime_name"
+          fontSize="0.90rem"
+          fontFamily="Inter"
+          fontWeight="400"
+          title={animeName}
+          style={{
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            width: "100%",
+          }}
+        >
           {animeName}
         </Typography>
         <div className="line_card"></div>

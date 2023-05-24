@@ -1,10 +1,13 @@
 //Libs
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
+//Types
+import { StyledButtonProps } from "./types";
+
+export const StyledButton = styled.button<StyledButtonProps>`
   width: fit-content;
-  background-color: #8627ff;
-  padding: 0.5rem 1rem;
+  background-color: ${({ background = "#8627ff" }) => background};
+  padding: ${({ padding = "0.5rem 1rem" }) => padding};
   color: #ffffff;
   border-radius: 0.5rem;
   border: none;
