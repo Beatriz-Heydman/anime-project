@@ -1,6 +1,5 @@
 //Libs
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 //Components
 import { SessionTitle } from "../../components/session-title";
@@ -13,15 +12,15 @@ import { MangaAnime } from "./types";
 
 //Utils
 import { validationSubtitleAnime } from "../../utils/formatter-subtitle-anime";
+import { animeRoutes } from "../../services/routes";
+import { api } from "../../services/api";
 
 export function MangasPage() {
-  const mangasAnimesRoute = "https://api.jikan.moe/v4/manga";
-
   const [mangasAnimes, setMangasAnimes] = useState<MangaAnime[]>([]);
 
   async function getMangas() {
     try {
-      const response = await axios.get(mangasAnimesRoute, {
+      const response = await api.get(animeRoutes.getMangas, {
         params: {
           limit: 16,
         },

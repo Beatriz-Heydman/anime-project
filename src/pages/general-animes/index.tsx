@@ -1,6 +1,5 @@
 //Libs
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 //Components
 import { CardAnime } from "../../components/card-anime";
@@ -11,14 +10,18 @@ import { Template } from "../../template";
 //Types
 import { GeneralAnime } from "./types";
 
-export function GeneralAnimesPage() {
-  const generalAnimesRoute = "https://api.jikan.moe/v4/top/anime";
+//Services
+import { api } from "../../services/api";
 
+//Routes
+import { animeRoutes } from "../../services/routes";
+
+export function GeneralAnimesPage() {
   const [generalAnimes, setGeneralAnimes] = useState<GeneralAnime[]>([]);
 
   async function getGeneralAnimes() {
     try {
-      const response = await axios.get(generalAnimesRoute, {
+      const response = await api.get(animeRoutes.getAnimes, {
         params: {
           limit: 16,
         },

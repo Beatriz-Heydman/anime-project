@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 //Libs
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 //Components
@@ -16,10 +15,10 @@ import { Pagination, ReleaseAnime } from "./types";
 
 //Utils
 import { validationSubtitleAnime } from "../../utils/formatter-subtitle-anime";
+import { api } from "../../services/api";
+import { animeRoutes } from "../../services/routes";
 
 export function ReleaseAnimesPage() {
-  const releaseAnimesRoute = "https://api.jikan.moe/v4/seasons/now";
-
   const [releaseAnimes, setReleaseAnimes] = useState<ReleaseAnime[]>([]);
 
   const [pageParam, setPageParam] = useState(1);
@@ -28,7 +27,7 @@ export function ReleaseAnimesPage() {
 
   async function getReleaseAnimes() {
     try {
-      const response = await axios.get(releaseAnimesRoute, {
+      const response = await api.get(animeRoutes.getSeasonAnimes, {
         params: {
           limit: 15,
           page: pageParam,
