@@ -3,6 +3,7 @@ export type CardAnimeProps = {
   animeName: string;
   animeImg: string;
   subtitle: string;
+  animeUrl: string;
 };
 
 export type StyledCardProps = {

@@ -1,9 +1,14 @@
 //Libs
-import { ChangeEvent } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 export type ButtonProps = {
   background?: string;
-  text?: string;
   padding?: string;
-  onClick?: (event: ChangeEvent) => void;
+  children: ReactNode;
+  onClick?: MouseEventHandler;
+};
+
+export type StyledButtonProps = {
+  background?: string;
+  padding?: string;
 };

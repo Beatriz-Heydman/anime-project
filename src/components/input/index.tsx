@@ -1,12 +1,17 @@
-import { Flex } from "../flex";
+//Libs
 import { CiSearch } from "react-icons/ci";
+
+//Components
+import { Flex } from "../flex";
+
+//Styles
 import { StyledInput } from "./styles";
 
 export function Input() {
   return (
     <Flex style={{ width: "100%" }}>
       <CiSearch
-        size="30px"
+        size="31px"
         style={{
           backgroundColor: "#8627ff",
           borderRadius: " 0.5rem 0 0 0.5rem",
