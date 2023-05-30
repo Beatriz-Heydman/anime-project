@@ -11,11 +11,14 @@ export function Template({ children }: TemplateProps) {
     <Flex
       direction="column"
       gap="2rem"
-      style={{ width: "100%", padding: "2rem" }}
+      style={{
+        width: "100%",
+        padding: "2rem",
+      }}
     >
       <Flex gap="1rem" style={{ width: "100%", padding: "1rem" }}>
         <Input />
-        <Button onClick={() => {}}>Buscar</Button>
+        <Button>Buscar</Button>
       </Flex>
       {children}
     </Flex>

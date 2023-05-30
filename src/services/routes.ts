@@ -1,5 +1,5 @@
 export const animeRoutes = {
   getSeasonAnimes: "/seasons/now",
-  getMangas: "/mangas",
+  getMangas: "/manga",
   getAnimes: "/top/anime",
 };

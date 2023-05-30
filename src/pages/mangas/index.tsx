@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 //Libs
 import { useEffect, useState } from "react";
 
@@ -6,35 +8,56 @@ import { SessionTitle } from "../../components/session-title";
 import { Template } from "../../template";
 import { CardAnime } from "../../components/card-anime";
 import { Flex } from "../../components/flex";
+import { Button } from "../../components/button";
 
 //Types
-import { MangaAnime } from "./types";
+import { MangaAnime, Pagination } from "./types";
 
 //Utils
 import { validationSubtitleAnime } from "../../utils/formatter-subtitle-anime";
+
+//Services
 import { animeRoutes } from "../../services/routes";
+
+//Routes
 import { api } from "../../services/api";
 
 export function MangasPage() {
   const [mangasAnimes, setMangasAnimes] = useState<MangaAnime[]>([]);
 
+  const [pageParam, setPageParam] = useState(1);
+
+  const [pagination, setPagination] = useState<Pagination | undefined>();
+
+  const [isLoading, setIsLoading] = useState(true);
+
   async function getMangas() {
     try {
+      setIsLoading(true);
       const response = await api.get(animeRoutes.getMangas, {
         params: {
           limit: 16,
+          page: pageParam,
         },
       });
 
-      setMangasAnimes(response.data.data);
+      setPagination(response.data.pagination);
+
+      if (mangasAnimes.length > 0) {
+        setMangasAnimes([...mangasAnimes, ...response.data.data]);
+      } else {
+        setMangasAnimes(response.data.data);
+      }
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   useEffect(() => {
     getMangas();
-  }, []);
+  }, [pageParam]);
 
   return (
     <Template>
@@ -50,6 +73,16 @@ export function MangasPage() {
           />
         ))}
       </Flex>
+      {pagination?.has_next_page && (
+        <Button
+          background="rgba(134, 39, 255, 0.25)"
+          onClick={() => {
+            setPageParam(pageParam + 1);
+          }}
+        >
+          {isLoading ? "Carregando..." : "Carregar mais"}
+        </Button>
+      )}
     </Template>
   );
 }
