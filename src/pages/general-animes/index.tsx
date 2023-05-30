@@ -33,7 +33,7 @@ export function GeneralAnimesPage() {
 
       const response = await api.get(animeRoutes.getAnimes, {
         params: {
-          limit: 16,
+          limit: 14,
           page: pageParam,
         },
       });

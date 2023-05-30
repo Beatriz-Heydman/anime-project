@@ -38,7 +38,7 @@ export function ReleaseAnimesPage() {
       const response = await api.get(animeRoutes.getSeasonAnimes, {
         params: {
           page: pageParam,
-          limit: 16,
+          limit: 14,
         },
       });
 

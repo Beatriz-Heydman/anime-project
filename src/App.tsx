@@ -11,27 +11,25 @@ import { ReleaseAnimesPage } from "./pages/release-animes";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Flex
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "#282c38",
-          }}
-        >
-          <Sidebar />
-          <Routes>
-            <Route element={<HomePage />} path="/" />
-            <Route element={<GeneralAnimesPage />} path="/general-animes" />
-            <Route element={<MangasPage />} path="/mangas" />
-            <Route element={<ReleaseAnimesPage />} path="/releases" />
-          </Routes>
-        </Flex>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Flex
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        style={{
+          minWidth: "100vw",
+          height: "100%",
+          backgroundColor: "#282c38",
+        }}
+      >
+        <Sidebar />
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<GeneralAnimesPage />} path="/general-animes" />
+          <Route element={<MangasPage />} path="/mangas" />
+          <Route element={<ReleaseAnimesPage />} path="/releases" />
+        </Routes>
+      </Flex>
+    </BrowserRouter>
   );
 }
 

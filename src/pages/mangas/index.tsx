@@ -17,10 +17,10 @@ import { MangaAnime, Pagination } from "./types";
 import { validationSubtitleAnime } from "../../utils/formatter-subtitle-anime";
 
 //Services
-import { animeRoutes } from "../../services/routes";
-
-//Routes
 import { api } from "../../services/api";
+
+// Routes
+import { animeRoutes } from "../../services/routes";
 
 export function MangasPage() {
   const [mangasAnimes, setMangasAnimes] = useState<MangaAnime[]>([]);
@@ -36,7 +36,7 @@ export function MangasPage() {
       setIsLoading(true);
       const response = await api.get(animeRoutes.getMangas, {
         params: {
-          limit: 16,
+          limit: 14,
           page: pageParam,
         },
       });
