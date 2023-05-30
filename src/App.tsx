@@ -16,8 +16,8 @@ function App() {
         justifyContent="flex-start"
         alignItems="flex-start"
         style={{
-          minHeight: "100vh",
-          minWidth: "100%",
+          minWidth: "100vw",
+          height: "100%",
           backgroundColor: "#282c38",
         }}
       >

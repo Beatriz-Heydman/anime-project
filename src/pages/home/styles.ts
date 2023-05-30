@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledHomePage = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
     url("/assets/images/anime-crossover-background.jpg");
   background-size: cover;

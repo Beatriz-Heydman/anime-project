@@ -35,11 +35,10 @@ export function Sidebar() {
         </button>
         {isOpenSidebar && (
           <Typography
-            fontFamily="Monofett"
             fontSize="1.5rem"
-            style={{ letterSpacing: "0.2rem", color: "#e2cbffac" }}
+            style={{ letterSpacing: "0.2rem", color: "#ffffffc7" }}
           >
-            animetrix
+            Animetrix
           </Typography>
         )}
       </div>

@@ -6,10 +6,12 @@ import { SidebarProps } from "./types";
 
 export const StyledSidebar = styled.div<SidebarProps>`
   background-color: #1f2531;
+  max-height: 100vh;
   height: 100%;
-  min-height: 100vh;
   width: ${({ isOpenSidebar }) => (isOpenSidebar ? "230px" : "70px")};
   transition: all ease 0.2s;
+  position: sticky;
+  top: 0;
 
   .container_menu_hamburger {
     padding: 1.5rem 0.5rem;

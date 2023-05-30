@@ -15,7 +15,11 @@ import { Pagination, ReleaseAnime } from "./types";
 
 //Utils
 import { validationSubtitleAnime } from "../../utils/formatter-subtitle-anime";
+
+//Services
 import { api } from "../../services/api";
+
+//Routes
 import { animeRoutes } from "../../services/routes";
 
 export function ReleaseAnimesPage() {
@@ -25,22 +29,25 @@ export function ReleaseAnimesPage() {
 
   const [pagination, setPagination] = useState<Pagination | undefined>();
 
+  const [isLoading, setIsLoading] = useState(true);
+
   async function getReleaseAnimes() {
     try {
+      setIsLoading(true);
+
       const response = await api.get(animeRoutes.getSeasonAnimes, {
         params: {
-          limit: 15,
           page: pageParam,
+          limit: 14,
         },
       });
+
       setPagination(response.data.pagination);
-      if (releaseAnimes.length > 0) {
-        setReleaseAnimes([...releaseAnimes, ...response.data.data]);
-      } else {
-        setReleaseAnimes(response.data.data);
-      }
+      setReleaseAnimes([...releaseAnimes, ...response.data.data]);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -69,7 +76,7 @@ export function ReleaseAnimesPage() {
             setPageParam(pageParam + 1);
           }}
         >
-          Carregar mais
+          {isLoading ? "Carregando..." : "Carregar mais"}
         </Button>
       )}
     </Template>
