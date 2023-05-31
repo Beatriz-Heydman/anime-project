@@ -18,4 +18,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:hover {
     background-color: #a057ff;
   }
+
+  &:disabled {
+    cursor: default;
+    filter: brightness(0.7);
+  }
 `;

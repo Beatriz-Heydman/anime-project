@@ -10,7 +10,8 @@ import { Template } from "../../template";
 import { Button } from "../../components/button";
 
 //Types
-import { GeneralAnime, Pagination } from "./types";
+import { GeneralAnime } from "./types";
+import { Pagination } from "../../shared/types";
 
 //Services
 import { api } from "../../services/api";
@@ -38,12 +39,7 @@ export function GeneralAnimesPage() {
         },
       });
       setPagination(response.data.pagination);
-
-      if (generalAnimes.length > 0) {
-        setGeneralAnimes([...generalAnimes, ...response.data.data]);
-      } else {
-        setGeneralAnimes(response.data.data);
-      }
+      setGeneralAnimes([...generalAnimes, ...response.data.data]);
     } catch (error) {
       console.error(error);
     } finally {
