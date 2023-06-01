@@ -5,13 +5,13 @@ import { StyledButton } from "./styles";
 import { ButtonProps } from "./types";
 
 export function Button({
-  children,
   background,
   padding,
-  onClick,
-}: ButtonProps) {
+  children,
+  ...props
+}: ButtonProps & React.HTMLAttributes<HTMLButtonElement>) {
   return (
-    <StyledButton background={background} padding={padding} onClick={onClick}>
+    <StyledButton background={background} padding={padding} {...props}>
       {children}
     </StyledButton>
   );
