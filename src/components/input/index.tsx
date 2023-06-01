@@ -7,7 +7,7 @@ import { Flex } from "../flex";
 //Styles
 import { StyledInput } from "./styles";
 
-export function Input() {
+export function Input(inputProps: React.HTMLAttributes<HTMLInputElement>) {
   return (
     <Flex style={{ width: "100%" }}>
       <CiSearch
@@ -19,7 +19,11 @@ export function Input() {
           padding: "0.2rem",
         }}
       />
-      <StyledInput type="text" placeholder="Digite o nome do anime" />
+      <StyledInput
+        type="text"
+        placeholder="Digite o nome do anime"
+        {...inputProps}
+      />
     </Flex>
   );
 }
