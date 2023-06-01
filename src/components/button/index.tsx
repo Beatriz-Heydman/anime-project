@@ -1,4 +1,5 @@
 //Styles
+import { ButtonHTMLAttributes } from "react";
 import { StyledButton } from "./styles";
 
 //Types
@@ -9,7 +10,7 @@ export function Button({
   padding,
   children,
   ...props
-}: ButtonProps & React.HTMLAttributes<HTMLButtonElement>) {
+}: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <StyledButton background={background} padding={padding} {...props}>
       {children}
