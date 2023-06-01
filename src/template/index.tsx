@@ -5,7 +5,6 @@ import { useState } from "react";
 
 //Components
 import { Button } from "../components/button";
-import { Flex } from "../components/flex";
 import { Input } from "../components/input";
 import { SessionTitle } from "../components/session-title";
 import { CardAnime } from "../components/card-anime";
@@ -22,6 +21,8 @@ import { api } from "../services/api";
 
 //Routes
 import { animeRoutes } from "../services/routes";
+import { Flex } from "../components/flex";
+import { TemplateContainer } from "./styles";
 
 export function Template({ children }: TemplateProps) {
   const [searchedAnimes, setSearchedAnimes] = useState<SearchedAnime[]>([]);
@@ -58,14 +59,7 @@ export function Template({ children }: TemplateProps) {
   }
 
   return (
-    <Flex
-      direction="column"
-      gap="2rem"
-      style={{
-        width: "100%",
-        padding: "2rem",
-      }}
-    >
+    <TemplateContainer>
       <Flex gap="1rem" style={{ width: "100%", padding: "1rem" }}>
         <Input
           onChange={(event) => {
@@ -108,6 +102,6 @@ export function Template({ children }: TemplateProps) {
         </Button>
       )}
       {children}
-    </Flex>
+    </TemplateContainer>
   );
 }

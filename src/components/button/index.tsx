@@ -1,23 +1,18 @@
 //Styles
+import { ButtonHTMLAttributes } from "react";
 import { StyledButton } from "./styles";
 
 //Types
 import { ButtonProps } from "./types";
 
 export function Button({
-  children,
   background,
   padding,
-  onClick,
-  disabled,
-}: ButtonProps) {
+  children,
+  ...props
+}: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
-    <StyledButton
-      disabled={disabled}
-      background={background}
-      padding={padding}
-      onClick={onClick}
-    >
+    <StyledButton background={background} padding={padding} {...props}>
       {children}
     </StyledButton>
   );

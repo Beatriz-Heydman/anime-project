@@ -8,17 +8,23 @@ export const StyledSidebar = styled.div<SidebarProps>`
   background-color: #1f2531;
   max-height: 100vh;
   height: 100%;
-  width: ${({ isOpenSidebar }) => (isOpenSidebar ? "230px" : "70px")};
+  min-width: ${({ isOpenSidebar }) => (isOpenSidebar ? "230px" : "70px")};
   transition: all ease 0.2s;
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 999;
+
+  @media (max-width: 500px) {
+    min-width: ${({ isOpenSidebar }) => (isOpenSidebar ? "100vw" : "70px")};
+  }
 
   .container_menu_hamburger {
     padding: 1.5rem 0.5rem;
     display: flex;
     align-items: center;
     color: white;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2rem;
     box-shadow: inset 0px 0px 12px 4px rgba(255, 255, 255, 0.14);
     font-family: "Megrim";
     font-size: 24px;
@@ -71,4 +77,17 @@ export const StyledSidebar = styled.div<SidebarProps>`
       width: 12px;
     }
   }
+`;
+
+export const Overlay = styled.div<{ isOpenSidebar: boolean }>`
+  background: #00000040;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+
+  pointer-events: ${({ isOpenSidebar }) =>
+    isOpenSidebar ? "default" : "none"};
+  opacity: ${({ isOpenSidebar }) => (isOpenSidebar ? "1" : "0")};
+  cursor: pointer;
 `;

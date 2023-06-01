@@ -11,6 +11,7 @@ export const StyledHomePage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 70px;
 
   .title_home_page {
     text-align: center;
