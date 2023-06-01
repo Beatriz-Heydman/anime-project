@@ -6,6 +6,7 @@ export type ButtonProps = {
   padding?: string;
   children: ReactNode;
   onClick?: MouseEventHandler;
+  disabled?: boolean;
 };
 
 export type StyledButtonProps = {

@@ -11,7 +11,8 @@ import { Flex } from "../../components/flex";
 import { Button } from "../../components/button";
 
 //Types
-import { Pagination, ReleaseAnime } from "./types";
+import { ReleaseAnime } from "./types";
+import { Pagination } from "../../shared/types";
 
 //Utils
 import { validationSubtitleAnime } from "../../utils/formatter-subtitle-anime";

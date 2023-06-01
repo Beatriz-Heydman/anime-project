@@ -9,9 +9,15 @@ export function Button({
   background,
   padding,
   onClick,
+  disabled,
 }: ButtonProps) {
   return (
-    <StyledButton background={background} padding={padding} onClick={onClick}>
+    <StyledButton
+      disabled={disabled}
+      background={background}
+      padding={padding}
+      onClick={onClick}
+    >
       {children}
     </StyledButton>
   );
