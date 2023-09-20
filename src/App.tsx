@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 //Components
 import { Flex } from "./components/flex";
 import { Sidebar } from "./components/sidebar";
+
+//Pages
 import { GeneralAnimesPage } from "./pages/general-animes";
 import { HomePage } from "./pages/home";
 import { MangasPage } from "./pages/mangas";

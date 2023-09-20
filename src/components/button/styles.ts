@@ -23,4 +23,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
     cursor: default;
     filter: brightness(0.7);
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;

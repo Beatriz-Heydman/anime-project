@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 //Components
 import { SessionTitle } from "../../components/session-title";
-import { Template } from "../../template";
 import { CardAnime } from "../../components/card-anime";
 import { Flex } from "../../components/flex";
 import { Button } from "../../components/button";
@@ -22,6 +21,9 @@ import { api } from "../../services/api";
 
 // Routes
 import { animeRoutes } from "../../services/routes";
+
+//Template
+import { Template } from "../../template";
 
 export function MangasPage() {
   const [mangasAnimes, setMangasAnimes] = useState<MangaAnime[]>([]);

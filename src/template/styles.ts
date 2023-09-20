@@ -10,20 +10,18 @@ export const TemplateContainer = styled.div`
   margin-left: 70px;
   align-items: center;
 
-  .search_container {
+  .search_content {
+    width: 100%;
     display: flex;
     gap: 1rem;
-    width: 100%;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
-
-    @media (max-width: 500px) {
-      flex-direction: column;
-    }
   }
 
-  .search_button {
-    @media (max-width: 500px) {
-      width: 100%;
+  @media (max-width: 600px) {
+    .search_content {
+      flex-direction: column;
     }
   }
 `;

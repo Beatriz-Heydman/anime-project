@@ -1,9 +1,9 @@
-//Styles
-import { StyledCard } from "./styles";
-
 //Components
 import { Flex } from "../flex";
 import { Typography } from "../typography";
+
+//Styles
+import { StyledCard } from "./styles";
 
 //Types
 import { CardAnimeProps } from "./types";

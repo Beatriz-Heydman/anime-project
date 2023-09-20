@@ -1,5 +1,7 @@
-//Styles
+//Libs
 import { ButtonHTMLAttributes } from "react";
+
+//Styles
 import { StyledButton } from "./styles";
 
 //Types

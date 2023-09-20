@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 //Libs
 import { useEffect, useState } from "react";
 
@@ -6,7 +7,6 @@ import { useEffect, useState } from "react";
 import { CardAnime } from "../../components/card-anime";
 import { Flex } from "../../components/flex";
 import { SessionTitle } from "../../components/session-title";
-import { Template } from "../../template";
 import { Button } from "../../components/button";
 
 //Types
@@ -18,6 +18,9 @@ import { api } from "../../services/api";
 
 //Routes
 import { animeRoutes } from "../../services/routes";
+
+//Template
+import { Template } from "../../template";
 
 export function GeneralAnimesPage() {
   const [generalAnimes, setGeneralAnimes] = useState<GeneralAnime[]>([]);

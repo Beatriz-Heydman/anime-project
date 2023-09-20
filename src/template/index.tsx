@@ -8,6 +8,10 @@ import { Button } from "../components/button";
 import { Input } from "../components/input";
 import { SessionTitle } from "../components/session-title";
 import { CardAnime } from "../components/card-anime";
+import { Flex } from "../components/flex";
+
+//Styles
+import { TemplateContainer } from "./styles";
 
 //Types
 import { SearchedAnime, TemplateProps } from "./types";
@@ -21,8 +25,6 @@ import { api } from "../services/api";
 
 //Routes
 import { animeRoutes } from "../services/routes";
-import { Flex } from "../components/flex";
-import { TemplateContainer } from "./styles";
 
 export function Template({ children }: TemplateProps) {
   const [searchedAnimes, setSearchedAnimes] = useState<SearchedAnime[]>([]);
@@ -60,7 +62,7 @@ export function Template({ children }: TemplateProps) {
 
   return (
     <TemplateContainer>
-      <Flex gap="1rem" style={{ width: "100%", padding: "1rem" }}>
+      <div className="search_content">
         <Input
           onChange={(event) => {
             setInputValue(event.currentTarget.value);
@@ -74,7 +76,7 @@ export function Template({ children }: TemplateProps) {
         >
           Buscar
         </Button>
-      </Flex>
+      </div>
 
       {searchedAnimes.length >= 1 && inputValue && (
         <SessionTitle title={`Resultados para: ${inputValue}`} />

@@ -13,7 +13,7 @@ export function HomePage() {
         fontSize="13rem"
         color="#ffffff9d"
       >
-        animetrix
+        anime
       </Typography>
     </StyledHomePage>
   );

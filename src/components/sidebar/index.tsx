@@ -5,13 +5,13 @@ import { FaPlay } from "react-icons/fa";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 import { MdMenuBook } from "react-icons/md";
 
-//Styles
-import { Overlay, StyledSidebar } from "./styles";
-
 //Components
 import { Flex } from "../flex";
 import { NavItem } from "./nav-item";
 import { Typography } from "../typography";
+
+//Styles
+import { Overlay, StyledSidebar } from "./styles";
 
 export function Sidebar() {
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
@@ -46,7 +46,7 @@ export function Sidebar() {
               fontSize="1.5rem"
               style={{ letterSpacing: "0.2rem", color: "#ffffffc7" }}
             >
-              Animetrix
+              Anime
             </Typography>
           )}
         </div>
