@@ -9,6 +9,7 @@ import { Input } from "../components/input";
 import { SessionTitle } from "../components/session-title";
 import { CardAnime } from "../components/card-anime";
 import { Flex } from "../components/flex";
+import { Typography } from "../components/typography";
 
 //Styles
 import { TemplateContainer } from "./styles";
@@ -35,6 +36,8 @@ export function Template({ children }: TemplateProps) {
 
   const [inputValue, setInputValue] = useState("");
 
+  const [hasNoItems, setHasNoItems] = useState(false);
+
   async function getSearchAnimes(pageParam: number) {
     try {
       setIsLoading(true);
@@ -46,6 +49,13 @@ export function Template({ children }: TemplateProps) {
           q: inputValue,
         },
       });
+
+      if (response.data.pagination.items.total === 0) {
+        setHasNoItems(true);
+      } else {
+        setHasNoItems(false);
+      }
+
       setPagination(response.data.pagination);
 
       if (pageParam === 1) {
@@ -77,6 +87,7 @@ export function Template({ children }: TemplateProps) {
           Buscar
         </Button>
       </div>
+      {hasNoItems && <Typography>Não há resultados para a busca</Typography>}
 
       {searchedAnimes.length >= 1 && inputValue && (
         <SessionTitle title={`Resultados para: ${inputValue}`} />
